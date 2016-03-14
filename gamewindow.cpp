@@ -11,9 +11,10 @@ bool GameWindow::getRunning()
 	return _running;
 }
 
-GameWindow::GameWindow(bool running)
+GameWindow::GameWindow(bool running, GLFWwindow* window)
 {
 	_running = running;
+	_window = window;
 }
 
 void GameWindow::render()
@@ -21,7 +22,7 @@ void GameWindow::render()
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	/* Swap front and back buffers */
-	glfwSwapBuffers(window);
+	glfwSwapBuffers(_window);
 }
 
 void GameWindow::update()

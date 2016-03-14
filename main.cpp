@@ -19,7 +19,7 @@ int main (void)
 		return -1;
 	}
 
-	gameWindow = new GameWindow(true);
+	gameWindow = new GameWindow(true, window);
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
