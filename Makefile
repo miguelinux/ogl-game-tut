@@ -5,7 +5,7 @@ TARGETS=$(basename $(SOURCES))
 CPPFLAGS= -Wall -Wextra
 CFLAGS= -I/usr/include/libdrm
 
-LDLIBS= -lglfw -GL
+LDLIBS= -lglfw -lGL
 
 
 .PHONY: all
