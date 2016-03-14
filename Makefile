@@ -3,8 +3,9 @@ OBJECTS=$(SOURCES:%.cpp=%.o)
 TARGETS=$(basename $(SOURCES))
 
 CPPFLAGS= -Wall -Wextra
+CFLAGS= -I/usr/include/libdrm
 
-LDLIBS= -lglfw
+LDLIBS= -lglfw -GL
 
 
 .PHONY: all
