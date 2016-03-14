@@ -18,6 +18,10 @@ GameWindow::GameWindow(bool running)
 
 void GameWindow::render()
 {
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	/* Swap front and back buffers */
+	glfwSwapBuffers(window);
 }
 
 void GameWindow::update()
