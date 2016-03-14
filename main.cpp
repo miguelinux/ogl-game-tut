@@ -1,8 +1,12 @@
 #include <GLFW/glfw3.h>
+#include "gamewindow.h"
 
 int main (void)
 {
 	GLFWwindow* window;
+
+	/* My game window */
+	GameWindow* gameWindow;
 
 	/* Initialize the library */
 	if (!glfwInit())
@@ -15,17 +19,26 @@ int main (void)
 		return -1;
 	}
 
+	gameWindow = new GameWindow(true);
+
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
 
 	/* Loop until the user closes the window */
-	while (!glfwWindowShouldClose(window)) {
+	while (gameWindow->getRunning()) {
+
 		/* Render here */
 
+		gameWindow->render();
+		gameWindow->update();
 
 		/* Poll for and process events */
 		glfwPollEvents();
+
+		gameWindow->setRunning(!glfwWindowShouldClose(window));
 	}
+
+	delete gameWindow;
 
 	glfwTerminate();
 	return 0;
