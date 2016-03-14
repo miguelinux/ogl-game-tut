@@ -1,6 +1,6 @@
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:%.cpp=%.o)
-TARGETS=$(basename $(SOURCES))
+TARGET=mijuego
 
 CPPFLAGS= -Wall -Wextra
 CFLAGS= -I/usr/include/libdrm
@@ -9,16 +9,16 @@ LDLIBS= -lglfw -lGL
 
 
 .PHONY: all
-all: $(TARGETS)
+all: $(TARGET)
 
 %.o: %.cpp
 	$(CXX) $(CFLAGS) $(CPPFLAGS) -c $<
 
-primero: primero.o
+$(TARGET): $(OBJECTS)
 	$(LINK.cpp) $^ $(LDLIBS) -o $@
 
 .PHONY: clean
 clean:
-	rm -f $(TARGETS) $(OBJECTS)
+	rm -f $(TARGET) $(OBJECTS)
 
 
