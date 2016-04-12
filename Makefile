@@ -1,3 +1,6 @@
+# Detect OS
+uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
+
 SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:%.cpp=%.o)
 TARGET=mijuego
@@ -5,8 +8,13 @@ TARGET=mijuego
 CPPFLAGS= -Wall -Wextra
 CFLAGS= -I/usr/include/libdrm
 
-LDLIBS= -lglfw -lGL
-
+ifeq ($(uname_S),Darwin)
+# OSX uses OpenGL as a framework
+GLFW3_FLAGS := `pkg-config --cflags --libs glfw3` -lglfw3 -framework OpenGL
+else
+# otherwise pkg-config finds OpenGL
+GLFW3_FLAGS := `pkg-config --cflags --libs glfw3 glu gl`
+endif
 
 .PHONY: all
 all: $(TARGET)
@@ -15,7 +23,7 @@ all: $(TARGET)
 	$(CXX) $(CFLAGS) $(CPPFLAGS) -c $<
 
 $(TARGET): $(OBJECTS)
-	$(LINK.cpp) $^ $(LDLIBS) -o $@
+	$(LINK.cpp) $^ $(GLFW3_FLAGS) -o $@
 
 .PHONY: clean
 clean:
