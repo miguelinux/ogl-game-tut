@@ -10,7 +10,7 @@ CFLAGS= -I/usr/include/libdrm
 
 ifeq ($(uname_S),Darwin)
 # OSX uses OpenGL as a framework
-GLFW3_FLAGS := `pkg-config --cflags --libs glfw3` -lglfw3 -framework OpenGL
+GLFW3_FLAGS := `pkg-config --cflags --libs glfw3` -framework OpenGL
 else
 # otherwise pkg-config finds OpenGL
 GLFW3_FLAGS := `pkg-config --cflags --libs glfw3 glu gl`
