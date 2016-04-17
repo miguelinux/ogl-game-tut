@@ -6,7 +6,6 @@ OBJECTS=$(SOURCES:%.cpp=%.o)
 TARGET=mijuego
 
 CPPFLAGS= -Wall -Wextra
-CFLAGS= -I/usr/include/libdrm
 
 ifeq ($(uname_S),Darwin)
 # OSX uses OpenGL as a framework
