@@ -19,10 +19,10 @@ int main (void)
 		return -1;
 	}
 
-	gameWindow = new GameWindow(true, window);
-
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
+
+	gameWindow = new GameWindow(true, window);
 
 	/* Loop until the user closes the window */
 	while (gameWindow->getRunning()) {
