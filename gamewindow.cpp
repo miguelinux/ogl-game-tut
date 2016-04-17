@@ -19,8 +19,17 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running)
 			     GLfloat alpha); */
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
+	/* This function retrieves the size, in pixels, of the framebuffer of
+	 * the specified window. */
 	glfwGetFramebufferSize(window, &_width, &_height);
 	glViewport(0, 0, _width, _height);
+
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	/* void glOrtho(GLdouble left, GLdouble right, GLdouble bottom,
+			GLdouble top, GLdouble nearVal, GLdouble farVal); */
+	glOrtho(0.0, _width, 0.0, _height, -1.0, 1.0);
+	glMatrixMode(GL_MODELVIEW);
 
 }
 
