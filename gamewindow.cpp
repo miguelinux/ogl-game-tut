@@ -39,10 +39,10 @@ void GameWindow::render()
 
 	glColor3f(1.0f, 0.0f, 0.0f);
 	glBegin(GL_QUADS);
-		glVertex2f(-0.5f, -0.5f);
-		glVertex2f( 0.5f, -0.5f);
-		glVertex2f( 0.5f,  0.5f);
-		glVertex2f(-0.5f,  0.5f);
+		glVertex2f(   0.0f,   0.0f);
+		glVertex2f( 100.0f,   0.0f);
+		glVertex2f( 100.0f, 100.0f);
+		glVertex2f(   0.0f, 100.0f);
 	glEnd();
 
 	/* Swap front and back buffers */
