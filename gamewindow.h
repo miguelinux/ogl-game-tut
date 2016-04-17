@@ -9,6 +9,10 @@ class GameWindow
 		bool _running;
 		GLFWwindow* _window;
 
+		/* Frame buffer size */
+		GLsizei _width;
+		GLsizei _height;
+
 	public:
 		void setRunning(bool newRunning);
 		bool getRunning();

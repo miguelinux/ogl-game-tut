@@ -18,6 +18,10 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running)
 	   void glClearColor(GLfloat red, GLfloat green, GLfloat blue,
 			     GLfloat alpha); */
 	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+
+	glfwGetFramebufferSize(window, &_width, &_height);
+	glViewport(0, 0, _width, _height);
+
 }
 
 void GameWindow::render()
