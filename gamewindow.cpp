@@ -23,7 +23,8 @@ bool GameWindow::getRunning()
 	return _running;
 }
 
-GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running)
+GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
+	_vertexBufferID(0)
 {
 	_window = window;
 	/* glClearColor - specify clear values for the color buffers
@@ -42,6 +43,10 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running)
 			GLdouble top, GLdouble nearVal, GLdouble farVal); */
 	glOrtho(0.0, _width, 0.0, _height, -1.0, 1.0);
 	glMatrixMode(GL_MODELVIEW);
+
+	glGenBuffers(1, &_vertexBufferID);
+	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferID);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 }
 
