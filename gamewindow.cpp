@@ -15,6 +15,10 @@ GameWindow::GameWindow(bool running, GLFWwindow* window)
 {
 	_running = running;
 	_window = window;
+	/* glClearColor - specify clear values for the color buffers
+	   void glClearColor(GLfloat red, GLfloat green, GLfloat blue,
+			     GLfloat alpha); */
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 }
 
 void GameWindow::render()
