@@ -1,5 +1,17 @@
 #include "gamewindow.h"
 
+typedef struct {
+	GLfloat postionCordinates[3];
+} VertexData;
+
+#define SQUARE_SIZE 100.0f
+
+VertexData vertices[] = {
+	{0.0f, 0.0f, 0.0f},
+	{SQUARE_SIZE, 0.0f, 0.0f},
+	{SQUARE_SIZE, SQUARE_SIZE, 0.0f},
+	{0.0f, SQUARE_SIZE, 0.0f}
+};
 
 void GameWindow::setRunning(bool newRunning)
 {
