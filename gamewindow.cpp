@@ -11,9 +11,8 @@ bool GameWindow::getRunning()
 	return _running;
 }
 
-GameWindow::GameWindow(bool running, GLFWwindow* window)
+GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running)
 {
-	_running = running;
 	_window = window;
 	/* glClearColor - specify clear values for the color buffers
 	   void glClearColor(GLfloat red, GLfloat green, GLfloat blue,
