@@ -1,7 +1,7 @@
 #include "gamewindow.h"
 
 typedef struct {
-	GLfloat postionCordinates[3];
+	GLfloat positionCordinates[3];
 } VertexData;
 
 #define SQUARE_SIZE 100.0f
@@ -46,7 +46,11 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 
 	glGenBuffers(1, &_vertexBufferID);
 	glBindBuffer(GL_ARRAY_BUFFER, _vertexBufferID);
+	/* creates and initializes a buffer object's data store */
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+	glEnableClientState(GL_VERTEX_ARRAY);
+	glVertexPointer(3, GL_FLOAT, sizeof(VertexData), (GLvoid *) offsetof(VertexData,positionCordinates));
 
 }
 
@@ -55,12 +59,7 @@ void GameWindow::render()
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glColor3f(1.0f, 0.0f, 0.0f);
-	glBegin(GL_QUADS);
-		glVertex2f(   0.0f,   0.0f);
-		glVertex2f( 100.0f,   0.0f);
-		glVertex2f( 100.0f, 100.0f);
-		glVertex2f(   0.0f, 100.0f);
-	glEnd();
+	glDrawArrays(GL_QUADS,0,4);
 
 	/* Swap front and back buffers */
 	glfwSwapBuffers(_window);
