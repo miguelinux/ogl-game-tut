@@ -25,6 +25,9 @@ void GameWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	glBegin(GL_QUADS);
+	glend();
+
 	/* Swap front and back buffers */
 	glfwSwapBuffers(_window);
 }
