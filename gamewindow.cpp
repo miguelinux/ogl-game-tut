@@ -31,7 +31,7 @@ void GameWindow::render()
 		glVertex2f( 0.5f, -0.5f);
 		glVertex2f( 0.5f,  0.5f);
 		glVertex2f(-0.5f,  0.5f);
-	glend();
+	glEnd();
 
 	/* Swap front and back buffers */
 	glfwSwapBuffers(_window);
