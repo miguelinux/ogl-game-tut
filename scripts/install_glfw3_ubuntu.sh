@@ -23,4 +23,6 @@ sudo ldconfig
 
 popd
 
+rm -rf  glfw-3.1.2
+
 echo "Done installing glfw3!"
