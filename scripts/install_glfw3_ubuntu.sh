@@ -7,8 +7,7 @@ sudo apt-get update
 
 sudo apt-get install build-essential cmake git xorg-dev libglu1-mesa-dev
 
-#https://github.com/glfw/glfw/archive/3.1.2.tar.gz
-curl -O https://github.com/glfw/glfw/releases/download/3.1.2/glfw-3.1.2.tar.gz
+curl -JOL https://github.com/glfw/glfw/archive/3.1.2.tar.gz
 
 tar xzf glfw-3.1.2.tar.gz
 
