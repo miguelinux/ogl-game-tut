@@ -24,6 +24,12 @@ bool GameWindow::getRunning()
 	return _running;
 }
 
+GLuint GameWindow::gloadAndBufferImage(const char *filename)
+{
+	GLFWimage imageData;
+	glfwReadImage(filename, &imageData, NULL);
+}
+
 GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	_vertexBufferID(0)
 {

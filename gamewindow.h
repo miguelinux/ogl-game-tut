@@ -17,6 +17,7 @@ class GameWindow
 		GLsizei _width;
 		GLsizei _height;
 		GLuint _vertexBufferID;
+		GLuint loadAndBufferImage(const char *filename);
 
 	public:
 		void setRunning(bool newRunning);
