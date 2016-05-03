@@ -8,10 +8,10 @@ typedef struct {
 #define SQUARE_SIZE 100.0f
 
 VertexData vertices[] = {
-	{0.0f, 0.0f, 0.0f},
-	{SQUARE_SIZE, 0.0f, 0.0f},
-	{SQUARE_SIZE, SQUARE_SIZE, 0.0f},
-	{0.0f, SQUARE_SIZE, 0.0f}
+	{{0.0f, 0.0f, 0.0f},               {0.0f, 0.0f}},
+	{{SQUARE_SIZE, 0.0f, 0.0f},        {1.0f, 0.0f}},
+	{{SQUARE_SIZE, SQUARE_SIZE, 0.0f}, {1.0f, 1.0f}},
+	{{0.0f, SQUARE_SIZE, 0.0f},        {0.0f, 1.0f}}
 };
 
 void GameWindow::setRunning(bool newRunning)
