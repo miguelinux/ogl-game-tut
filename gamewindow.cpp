@@ -1,7 +1,7 @@
 #include "gamewindow.h"
 
 typedef struct {
-	GLfloat positionCordinates[3];
+	GLfloat positionCoordinates[3];
 	GLfloat textureCoordinates[2];
 } VertexData;
 
@@ -51,7 +51,7 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
 
 	glEnableClientState(GL_VERTEX_ARRAY);
-	glVertexPointer(3, GL_FLOAT, sizeof(VertexData), (GLvoid *) offsetof(VertexData,positionCordinates));
+	glVertexPointer(3, GL_FLOAT, sizeof(VertexData), (GLvoid *) offsetof(VertexData,positionCoordinates));
 
 }
 
