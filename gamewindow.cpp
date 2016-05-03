@@ -1,5 +1,9 @@
 #include "gamewindow.h"
 
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
+
+
 typedef struct {
 	GLfloat positionCoordinates[3];
 	GLfloat textureCoordinates[2];
