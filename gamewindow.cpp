@@ -2,6 +2,7 @@
 
 typedef struct {
 	GLfloat positionCordinates[3];
+	GLfloat textureCoordinates[2];
 } VertexData;
 
 #define SQUARE_SIZE 100.0f
