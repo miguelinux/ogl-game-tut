@@ -31,8 +31,16 @@ bool GameWindow::getRunning()
 
 GLuint GameWindow::loadAndBufferImage(const char *filename)
 {
-	GLFWimage imageData;
-	glfwReadImage(filename, &imageData, NULL);
+	int width, height, bpp /* 8-bit component per pixel */;
+        unsigned char *data = NULL;
+
+	data = stbi_load(filename, &width, &height, &bpp, 0);
+
+	if (data == NULL)
+		return 0;
+
+
+	stbi_image_free(data)
 }
 
 GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
