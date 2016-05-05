@@ -29,7 +29,7 @@ bool GameWindow::getRunning()
 	return _running;
 }
 
-GLuint GameWindow::gloadAndBufferImage(const char *filename)
+GLuint GameWindow::loadAndBufferImage(const char *filename)
 {
 	GLFWimage imageData;
 	glfwReadImage(filename, &imageData, NULL);
