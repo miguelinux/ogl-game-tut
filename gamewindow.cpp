@@ -74,6 +74,8 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	glViewport(0, 0, _width, _height);
 
 	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
