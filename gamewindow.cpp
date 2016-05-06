@@ -91,6 +91,7 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glTexCoordPointer(2, GL_FLOAT, sizeof(VertexData), (GLvoid *) offsetof(VertexData, textureCoordinates));
 
+	textureBufferID = loadAndBufferImage("nave.png");
 }
 
 void GameWindow::render()
