@@ -73,6 +73,8 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	glfwGetFramebufferSize(window, &_width, &_height);
 	glViewport(0, 0, _width, _height);
 
+	glEnable(GL_TEXTURE_2D);
+
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
 	/* void glOrtho(GLdouble left, GLdouble right, GLdouble bottom,
