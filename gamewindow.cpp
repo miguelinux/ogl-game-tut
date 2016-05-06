@@ -100,7 +100,6 @@ void GameWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	glColor3f(1.0f, 0.0f, 0.0f);
 	glDrawArrays(GL_QUADS,0,4);
 
 	/* Swap front and back buffers */
