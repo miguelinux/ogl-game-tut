@@ -96,13 +96,15 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	glTexCoordPointer(2, GL_FLOAT, sizeof(VertexData), (GLvoid *) offsetof(VertexData, textureCoordinates));
 
 	_textureBufferID = loadAndBufferImage("nave.png");
+
+	_rocket = new Sprite(_textureBufferID);
 }
 
 void GameWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	glDrawArrays(GL_QUADS,0,4);
+	_rocket->render();
 
 	/* Swap front and back buffers */
 	glfwSwapBuffers(_window);
