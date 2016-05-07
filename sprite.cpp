@@ -10,9 +10,10 @@ Vector2 Sprite::getPosition()
 	return _position;
 }
 
-Sprite::Sprite(GLuint textureBufferID)
+Sprite::Sprite(GLuint textureBufferID, Vector2 position)
 {
 	_textureBufferID = textureBufferID;
+	_position = position;
 }
 
 

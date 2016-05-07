@@ -18,7 +18,7 @@ class Sprite
 		void setPosition(Vector2 newPosition);
 		Vector2 getPosition();
 
-		Sprite(GLuint textureBufferID);
+		Sprite(GLuint textureBufferID, Vector2 position);
 
 		void render();
 		void update();

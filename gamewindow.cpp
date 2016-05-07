@@ -62,6 +62,8 @@ GLuint GameWindow::loadAndBufferImage(const char *filename)
 GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	_vertexBufferID(0)
 {
+	Vector2 rocketPosition;
+
 	_window = window;
 	/* glClearColor - specify clear values for the color buffers
 	   void glClearColor(GLfloat red, GLfloat green, GLfloat blue,
@@ -97,7 +99,10 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 
 	_textureBufferID = loadAndBufferImage("nave.png");
 
-	_rocket = new Sprite(_textureBufferID);
+	rocketPosition.x = 300;
+	rocketPosition.y = 200;
+
+	_rocket = new Sprite(_textureBufferID, rocketPosition);
 }
 
 void GameWindow::render()
