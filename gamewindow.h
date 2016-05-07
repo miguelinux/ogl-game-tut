@@ -6,7 +6,7 @@
 #define GLFW_INCLUDE_GLEXT
 
 #include <GLFW/glfw3.h>
-#include "sprite.h"
+#include "playersprite.h"
 
 class GameWindow
 {
@@ -20,7 +20,7 @@ class GameWindow
 		GLuint _vertexBufferID;
 		GLuint _textureBufferID;
 		GLuint loadAndBufferImage(const char *filename);
-		Sprite *_rocket;
+		PlayerSprite *_rocket;
 
 	public:
 		void setRunning(bool newRunning);
