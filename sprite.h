@@ -9,10 +9,14 @@ class Sprite
 	private:
 		GLuint   _textureBufferID;
 		Vector2  _position;
+		Vector2  _velocity;
 
 	public:
 		void setPosition(Vector2 newPosition);
 		Vector2 getPosition();
+
+		void setVelocity(Vector2 newVelocity);
+		Vector2 getVelocity();
 
 		Sprite(GLuint textureBufferID, Vector2 position);
 

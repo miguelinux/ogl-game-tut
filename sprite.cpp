@@ -10,6 +10,16 @@ Vector2 Sprite::getPosition()
 	return _position;
 }
 
+void Sprite::setVelocity(Vector2 newVelocity)
+{
+	_velocity = newVelocity;
+}
+
+Vector2 Sprite::getVelocity()
+{
+	return _velocity;
+}
+
 Sprite::Sprite(GLuint textureBufferID, Vector2 position)
 {
 	_textureBufferID = textureBufferID;
@@ -30,5 +40,5 @@ void Sprite::render()
 
 void Sprite::update()
 {
-
+	_position = addVector2(_position, _velocity);
 }
