@@ -34,7 +34,7 @@ void Sprite::render()
 
 	glLoadIdentity();
 
-	glTranslatef(_position.x, _position.y, 0);
+	glTranslatef(_position.x - SQUARE_SIZE/2.0f, _position.y - SQUARE_SIZE/2.0f, 0);
 
 	glDrawArrays(GL_QUADS, 0 , 4);
 }
