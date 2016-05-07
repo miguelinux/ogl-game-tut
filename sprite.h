@@ -12,6 +12,7 @@ class Sprite
 
 	protected:
 		Vector2  _position;
+		GLFWwindow* _window;
 
 	public:
 		void setPosition(Vector2 newPosition);
@@ -20,7 +21,7 @@ class Sprite
 		void setVelocity(Vector2 newVelocity);
 		Vector2 getVelocity();
 
-		Sprite(GLuint textureBufferID, Vector2 position);
+		Sprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position);
 
 		void render();
 		virtual void update();

@@ -8,7 +8,7 @@ class PlayerSprite : public Sprite
 	private:
 
 	public:
-		PlayerSprite(GLuint textureBufferID, Vector2 position);
+		PlayerSprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position);
 
 		void update();
 };

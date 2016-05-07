@@ -102,7 +102,7 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	rocketPosition.x = 300;
 	rocketPosition.y = 200;
 
-	_rocket = new PlayerSprite(_textureBufferID, rocketPosition);
+	_rocket = new PlayerSprite(window, _textureBufferID, rocketPosition);
 
 	/* _rocket->setVelocity(makeVector2(2.0f, 2.0f)); */
 }
