@@ -8,8 +8,10 @@ class Sprite
 {
 	private:
 		GLuint   _textureBufferID;
-		Vector2  _position;
 		Vector2  _velocity;
+
+	protected:
+		Vector2  _position;
 
 	public:
 		void setPosition(Vector2 newPosition);
@@ -21,7 +23,7 @@ class Sprite
 		Sprite(GLuint textureBufferID, Vector2 position);
 
 		void render();
-		void update();
+		virtual void update();
 };
 
 #endif
