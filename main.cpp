@@ -40,8 +40,12 @@ int main (void)
 		gameWindow->render();
 
 		deltaTime += (glfwGetTime() - lastTime)*Updates_Per_Second;
+		lastTime = glfwGetTime();
 
-		gameWindow->update();
+		while (deltaTime >= 1.0f) {
+			gameWindow->update();
+			--deltaTime;
+		}
 
 		/* Poll for and process events */
 		glfwPollEvents();
