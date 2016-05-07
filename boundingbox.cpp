@@ -2,7 +2,8 @@
 
 BoundingBox makeBoundingBox(int top, int bottom, int left, int right)
 {
-	BoundingBox boundinBox;
+	BoundingBox boundingBox;
+
 	boundingBox.top = top;
 	boundingBox.bottom = bottom;
 	boundingBox.left = left;

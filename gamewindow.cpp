@@ -104,6 +104,8 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 
 	_rocket = new PlayerSprite(window, _textureBufferID, rocketPosition);
 
+	_rocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
+
 	/* _rocket->setVelocity(makeVector2(2.0f, 2.0f)); */
 }
 
