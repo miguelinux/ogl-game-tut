@@ -2,11 +2,7 @@
 #define SPRITE_H
 
 #include <GLFW/glfw3.h>
-
-typedef struct {
-	GLfloat x;
-	GLfloat y;
-} Vector2;
+#include "vector2.h"
 
 class Sprite
 {
