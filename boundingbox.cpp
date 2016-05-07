@@ -1,0 +1,13 @@
+#include "boundingbox.h"
+
+BoundingBox makeBoundingBox(int top, int bottom, int left, int right)
+{
+	BoundingBox boundinBox;
+	boundingBox.top = top;
+	boundingBox.bottom = bottom;
+	boundingBox.left = left;
+	boundingBox.right = right;
+
+	return boundingBox;
+}
+
