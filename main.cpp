@@ -1,8 +1,12 @@
 #include "gamewindow.h"
 
+
+#define Updates_Per_Second 60
+
 int main (void)
 {
 	GLFWwindow* window;
+	double lastTime, deltaTime;
 
 	/* My game window */
 	GameWindow* gameWindow;
@@ -23,14 +27,21 @@ int main (void)
 
 	gameWindow = new GameWindow(true, window);
 
+	glfwSwapInterval(0);
+
+	lastTime = glfwGetTime();
+	deltaTime = 0.0f;
+
 	/* Loop until the user closes the window */
 	while (gameWindow->getRunning()) {
 
 		/* Render here */
 
 		gameWindow->render();
-		gameWindow->update();
 
+		deltaTime += (glfwGetTime() - lastTime)*Updates_Per_Second;
+
+		gameWindow->update();
 
 		/* Poll for and process events */
 		glfwPollEvents();
