@@ -1,7 +1,6 @@
 #include "gamewindow.h"
 
-
-#define Updates_Per_Second 60
+#define UPDATES_PER_SECOND 60
 
 int main (void)
 {
@@ -39,7 +38,7 @@ int main (void)
 
 		gameWindow->render();
 
-		deltaTime += (glfwGetTime() - lastTime)*Updates_Per_Second;
+		deltaTime += (glfwGetTime() - lastTime)*UPDATES_PER_SECOND;
 		lastTime = glfwGetTime();
 
 		while (deltaTime >= 1.0f) {
