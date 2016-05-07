@@ -26,14 +26,14 @@ int main (void)
 	/* Loop until the user closes the window */
 	while (gameWindow->getRunning()) {
 
-		/* Poll for and process events */
-		glfwPollEvents();
-
 		/* Render here */
 
 		gameWindow->render();
 		gameWindow->update();
 
+
+		/* Poll for and process events */
+		glfwPollEvents();
 
 		gameWindow->setRunning(!glfwWindowShouldClose(window));
 	}
