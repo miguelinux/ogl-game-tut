@@ -1,6 +1,6 @@
 #include "playersprite.h"
 
-PlayerSprite::PrivateSprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position):
+PlayerSprite::PlayerSprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position):
 	Sprite(window, textureBufferID, position)
 {
 
