@@ -5,7 +5,8 @@ SOURCES=$(wildcard *.cpp)
 OBJECTS=$(SOURCES:%.cpp=%.o)
 TARGET=mijuego
 
-CPPFLAGS= -Wall -Wextra -Ithird_party
+CPPFLAGS= -Wall -Wextra
+CPPFLAGS+=  -Ithird_party  -Ivector2 -Iboundingbox
 
 ifeq ($(uname_S),Darwin)
 # OSX uses OpenGL as a framework
