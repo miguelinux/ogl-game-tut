@@ -1,12 +1,12 @@
 #include "playersprite.h"
 
-PrivateSprite::PrivateSprite(GLuint textureBufferID, Vector2 position):
+PlayerSprite::PrivateSprite(GLuint textureBufferID, Vector2 position):
 	Sprite(textureBufferID, position)
 {
 
 }
 
-void PrivateSprite::update()
+void PlayerSprite::update()
 {
 	if (glfwGetKey(GLFW_KEY_UP)) {
 		_position = addVector2(_position, makeVector2(0.0f, 1.5f));
