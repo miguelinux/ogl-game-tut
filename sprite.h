@@ -4,6 +4,8 @@
 #include <GLFW/glfw3.h>
 #include "vector2.h"
 
+#define SQUARE_SIZE 100.0f
+
 class Sprite
 {
 	private:
