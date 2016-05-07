@@ -21,6 +21,8 @@ void Sprite::render()
 {
 	glBindTexture(GL_TEXTURE_2D, _textureBufferID);
 
+	glTranslatef(_position.x, _position.y, 0);
+
 	glDrawArrays(GL_QUADS, 0 , 4);
 }
 
