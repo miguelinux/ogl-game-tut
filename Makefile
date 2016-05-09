@@ -1,7 +1,7 @@
 # Detect OS
 uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
 
-SOURCES=$(wildcard *.cpp)
+SOURCES=$(wildcard *.cpp boundingbox/*.cpp vector2/*.cpp)
 OBJECTS=$(SOURCES:%.cpp=%.o)
 TARGET=mijuego
 
