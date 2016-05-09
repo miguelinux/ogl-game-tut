@@ -6,6 +6,8 @@
 #define GLFW_INCLUDE_GLEXT
 
 #include <GLFW/glfw3.h>
+#include <vector>
+
 #include "playersprite.h"
 
 class GameWindow
