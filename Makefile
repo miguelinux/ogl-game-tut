@@ -20,7 +20,7 @@ endif
 all: $(TARGET)
 
 %.o: %.cpp
-	$(CXX) $(CFLAGS) $(CPPFLAGS) -c $<
+	$(CXX) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(TARGET): $(OBJECTS)
 	$(LINK.cpp) $^ $(GLFW3_FLAGS) -o $@
