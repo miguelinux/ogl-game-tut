@@ -21,6 +21,7 @@ class GameWindow
 		GLuint _textureBufferID;
 		GLuint loadAndBufferImage(const char *filename);
 		PlayerSprite *_rocket;
+		std::vector<Sprite *> *renderArray;
 
 	public:
 		void setRunning(bool newRunning);
