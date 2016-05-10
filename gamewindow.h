@@ -24,7 +24,7 @@ class GameWindow
 		GLuint _vertexBufferID;
 		GLuint _textureBufferID;
 
-		std::vector<Sprite *> *renderArray;
+		std::vector<Sprite *> *_renderArray;
 
 		GLuint loadAndBufferImage(const char *filename);
 		void setupGL();

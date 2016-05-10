@@ -66,7 +66,7 @@ void GameWindow::setupGL()
 
 	/* This function retrieves the size, in pixels, of the framebuffer of
 	 * the specified window. */
-	glfwGetFramebufferSize(window, &_width, &_height);
+	glfwGetFramebufferSize(_window, &_width, &_height);
 	glViewport(0, 0, _width, _height);
 
 	glEnable(GL_TEXTURE_2D);
@@ -95,18 +95,20 @@ void GameWindow::setupGL()
 GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	_vertexBufferID(0)
 {
-	Vector2 rocketPosition;
+	PlayerSprite *rocket;
 
 	_window = window;
 
+	this->setupGL();
+
 	_textureBufferID = loadAndBufferImage("nave.png");
 
-	rocketPosition.x = 300;
-	rocketPosition.y = 200;
+	_renderArray = new std::vector<Sprite *>;
 
-	_rocket = new PlayerSprite(window, _textureBufferID, rocketPosition);
+	rocket = new PlayerSprite(_window, _textureBufferID, makeVector2(300,200));
+	rocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
 
-	_rocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
+	_renderArray->push_back(rocket);
 
 	/* _rocket->setVelocity(makeVector2(2.0f, 2.0f)); */
 }
@@ -115,7 +117,10 @@ void GameWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	_rocket->render();
+	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
+			spriteIterator != _renderArray->end(); spriteIterator++) {
+		(*spriteIterator)->render();
+	}
 
 	/* Swap front and back buffers */
 	glfwSwapBuffers(_window);
@@ -123,5 +128,8 @@ void GameWindow::render()
 
 void GameWindow::update()
 {
-	_rocket->update();
+	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
+			spriteIterator != _renderArray->end(); spriteIterator++) {
+		(*spriteIterator)->update();
+	}
 }
