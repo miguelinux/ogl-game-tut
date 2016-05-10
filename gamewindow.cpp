@@ -111,6 +111,8 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 
 	otherRocket = new Sprite(_window, _textureBufferID, makeVector2(400,400));
 
+	otherRocket->setVelocity(makeVector2(1.0f, -2.0f));
+
 	_renderArray->push_back(rocket);
 	_renderArray->push_back(otherRocket);
 
