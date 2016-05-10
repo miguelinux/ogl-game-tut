@@ -96,6 +96,7 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	_vertexBufferID(0)
 {
 	PlayerSprite *rocket;
+	Sprite *otherRocket;
 
 	_window = window;
 
@@ -108,7 +109,10 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	rocket = new PlayerSprite(_window, _textureBufferID, makeVector2(300,200));
 	rocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
 
+	otherRocket = new Sprite(_window, _textureBufferID, makeVector2(400,400));
+
 	_renderArray->push_back(rocket);
+	_renderArray->push_back(otherRocket);
 
 	/* _rocket->setVelocity(makeVector2(2.0f, 2.0f)); */
 }
