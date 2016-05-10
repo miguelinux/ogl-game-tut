@@ -57,12 +57,8 @@ GLuint GameWindow::loadAndBufferImage(const char *filename)
 	return textureBufferID;
 }
 
-GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
-	_vertexBufferID(0)
+void GameWindow::setupGL()
 {
-	Vector2 rocketPosition;
-
-	_window = window;
 	/* glClearColor - specify clear values for the color buffers
 	   void glClearColor(GLfloat red, GLfloat green, GLfloat blue,
 			     GLfloat alpha); */
@@ -94,6 +90,14 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 
 	glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glTexCoordPointer(2, GL_FLOAT, sizeof(VertexData), (GLvoid *) offsetof(VertexData, textureCoordinates));
+}
+
+GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
+	_vertexBufferID(0)
+{
+	Vector2 rocketPosition;
+
+	_window = window;
 
 	_textureBufferID = loadAndBufferImage("nave.png");
 

@@ -13,18 +13,21 @@
 class GameWindow
 {
 	private:
-		bool _running;
 		GLFWwindow* _window;
+
+		bool _running;
 
 		/* Frame buffer size */
 		GLsizei _width;
 		GLsizei _height;
+
 		GLuint _vertexBufferID;
 		GLuint _textureBufferID;
-		PlayerSprite *_rocket;
+
 		std::vector<Sprite *> *renderArray;
 
 		GLuint loadAndBufferImage(const char *filename);
+		void setupGL();
 
 	public:
 		void setRunning(bool newRunning);
