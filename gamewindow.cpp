@@ -119,6 +119,15 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	/* _rocket->setVelocity(makeVector2(2.0f, 2.0f)); */
 }
 
+GameWindow::~GameWindow()
+{
+	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
+			spriteIterator != _renderArray->end(); spriteIterator++) {
+		delete (*spriteIterator);
+	}
+	delete _renderArray;
+}
+
 void GameWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);

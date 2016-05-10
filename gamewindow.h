@@ -34,6 +34,7 @@ class GameWindow
 		bool getRunning();
 
 		GameWindow(bool running, GLFWwindow* window);
+		~GameWindow();
 
 		void render();
 		void update();
