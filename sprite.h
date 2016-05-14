@@ -17,15 +17,17 @@ class Sprite
 		GLFWwindow* _window;
 
 	public:
+		Sprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position);
+		virtual ~Sprite();
+
 		void setPosition(Vector2 newPosition);
 		Vector2 getPosition();
 
 		void setVelocity(Vector2 newVelocity);
 		Vector2 getVelocity();
 
-		Sprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position);
-
 		void render();
+
 		virtual void update();
 };
 

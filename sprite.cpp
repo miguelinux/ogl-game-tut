@@ -27,6 +27,10 @@ Sprite::Sprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position)
 	_window = window;
 }
 
+Sprite::~Sprite()
+{
+}
+
 
 void Sprite::render()
 {
