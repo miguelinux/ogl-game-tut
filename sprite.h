@@ -27,8 +27,8 @@ class Sprite
 		void setVelocity(Vector2 newVelocity);
 		Vector2 getVelocity();
 
-		void setRotation(GLFloat newRotation);
-		GLFloat getRotation();
+		void setRotation(GLfloat newRotation);
+		GLfloat getRotation();
 
 		void render();
 

@@ -104,6 +104,7 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	_playerRocket = new PlayerSprite(_window, _textureBufferID,
 			makeVector2( _height/2.0, 300));
 	_playerRocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
+	_playerRocket->setRotation(45);
 
 }
 
