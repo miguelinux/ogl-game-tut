@@ -2,13 +2,14 @@
 
 #define UPDATES_PER_SECOND 60
 
+/* My game window */
+GameWindow* gameWindow;
+
+
 int main (void)
 {
 	GLFWwindow* window;
 	double lastTime, deltaTime;
-
-	/* My game window */
-	GameWindow* gameWindow;
 
 	/* Initialize the library */
 	if (!glfwInit())
