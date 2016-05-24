@@ -11,6 +11,7 @@ class Sprite
 	private:
 		GLuint   _textureBufferID;
 		Vector2  _velocity;
+		GLfloat  _rotation;
 
 	protected:
 		Vector2  _position;
@@ -25,6 +26,9 @@ class Sprite
 
 		void setVelocity(Vector2 newVelocity);
 		Vector2 getVelocity();
+
+		void setRotation(GLFloat newRotation);
+		GLFloat getRotation();
 
 		void render();
 

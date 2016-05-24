@@ -20,6 +20,16 @@ Vector2 Sprite::getVelocity()
 	return _velocity;
 }
 
+void Sprite::setRotation(GLFloat newRotation)
+{
+	_rotation = newRotation;
+}
+
+GLFloat Sprite::getRotation()
+{
+	return _rotation;
+}
+
 Sprite::Sprite(GLFWwindow* window, GLuint textureBufferID, Vector2 position)
 {
 	_textureBufferID = textureBufferID;
