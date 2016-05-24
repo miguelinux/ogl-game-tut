@@ -5,6 +5,10 @@
 /* My game window */
 GameWindow* gameWindow;
 
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
+{
+	gameWindow->mouseButtonPressed(button, action);
+}
 
 int main (void)
 {
@@ -24,6 +28,8 @@ int main (void)
 
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
+
+	glfwSetMouseButtonCallback(window, mouse_button_callback);
 
 	gameWindow = new GameWindow(true, window);
 

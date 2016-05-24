@@ -147,3 +147,12 @@ void GameWindow::update()
 	}
 	*/
 }
+
+void GameWindow::mouseButtonPressed(int button, int action)
+{
+	double xpos, ypos;
+	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
+		glfwGetCursorPos(_window, &xpos, &ypos);
+		printf("X: %5.2f Y: %5.2f\n", xpos, ypos);
+	}
+}

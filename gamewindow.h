@@ -38,6 +38,8 @@ class GameWindow
 
 		void render();
 		void update();
+
+		void mouseButtonPressed(int button, int action);
 };
 
 #endif
