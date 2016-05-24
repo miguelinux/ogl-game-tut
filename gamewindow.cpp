@@ -108,21 +108,25 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 
 GameWindow::~GameWindow()
 {
+	/*
 	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
 			spriteIterator != _renderArray->end(); spriteIterator++) {
 		delete (*spriteIterator);
 	}
 	delete _renderArray;
+	*/
 }
 
 void GameWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	/*
 	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
 			spriteIterator != _renderArray->end(); spriteIterator++) {
 		(*spriteIterator)->render();
 	}
+	*/
 
 	/* Swap front and back buffers */
 	glfwSwapBuffers(_window);
@@ -130,8 +134,10 @@ void GameWindow::render()
 
 void GameWindow::update()
 {
+	/*
 	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
 			spriteIterator != _renderArray->end(); spriteIterator++) {
 		(*spriteIterator)->update();
 	}
+	*/
 }
