@@ -24,6 +24,8 @@ class GameWindow
 		GLuint _vertexBufferID;
 		GLuint _textureBufferID;
 
+		PlayerSprite *_playerRocket;
+
 		GLuint loadAndBufferImage(const char *filename);
 		void setupGL();
 

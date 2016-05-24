@@ -95,14 +95,15 @@ void GameWindow::setupGL()
 GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	_vertexBufferID(0)
 {
-	PlayerSprite *rocket;
-	Sprite *otherRocket;
-
 	_window = window;
 
 	this->setupGL();
 
 	_textureBufferID = loadAndBufferImage("nave.png");
+
+	_playerRocket = new PlayerSprite(_window, _textureBufferID,
+			makeVector2( _height/2.0, 300));
+	_playerRocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
 
 }
 
@@ -121,6 +122,8 @@ void GameWindow::render()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	_playerRocket->render();
+
 	/*
 	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
 			spriteIterator != _renderArray->end(); spriteIterator++) {
@@ -134,6 +137,8 @@ void GameWindow::render()
 
 void GameWindow::update()
 {
+	_playerRocket->update();
+
 	/*
 	for (std::vector<Sprite *>::iterator spriteIterator = _renderArray->begin();
 			spriteIterator != _renderArray->end(); spriteIterator++) {
