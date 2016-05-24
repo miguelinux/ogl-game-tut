@@ -49,7 +49,7 @@ void Sprite::render()
 	glLoadIdentity();
 
 	glTranslatef(_position.x - SQUARE_SIZE/2.0f, _position.y - SQUARE_SIZE/2.0f, 0);
-	glRotatef(_rotation, 0, 0, 1.0f);
+	glRotatef(-_rotation, 0, 0, 1.0f);
 
 	glDrawArrays(GL_QUADS, 0 , 4);
 }
