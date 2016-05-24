@@ -104,19 +104,6 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 
 	_textureBufferID = loadAndBufferImage("nave.png");
 
-	_renderArray = new std::vector<Sprite *>;
-
-	rocket = new PlayerSprite(_window, _textureBufferID, makeVector2(300,200));
-	rocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
-
-	otherRocket = new Sprite(_window, _textureBufferID, makeVector2(400,400));
-
-	otherRocket->setVelocity(makeVector2(1.0f, -2.0f));
-
-	_renderArray->push_back(rocket);
-	_renderArray->push_back(otherRocket);
-
-	/* _rocket->setVelocity(makeVector2(2.0f, 2.0f)); */
 }
 
 GameWindow::~GameWindow()
