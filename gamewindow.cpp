@@ -157,7 +157,7 @@ void GameWindow::mouseButtonPressed(int button, int action)
 		ball = new Sprite(_window, _ballTextureBufferID,
 				makeVector2(_playerRocket->getPosition().x,
 					_playerRocket->getPosition().y));
-		ball->setVelocity(makeVector2(2.0, 0.0));
+		ball->setVelocity(makeVector2(8.0, 0.0));
 
 		_ballsArray->push_back(ball);
 	}
