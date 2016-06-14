@@ -118,6 +118,9 @@ GameWindow::~GameWindow()
 		delete (*spriteIterator);
 	}
 	delete _ballsArray;
+	delete _playerRocket;
+
+	glDeleteBuffers(1, &_vertexBufferID);
 }
 
 void GameWindow::render()
@@ -155,7 +158,7 @@ void GameWindow::mouseButtonPressed(int button, int action)
 		ypos = _height - ypos;
 
 		ball = new Sprite(_window, _ballTextureBufferID,
-				makeVector2(_playerRocket->getPosition().x,
+				makeVector2(_playerRocket->getPosition().x+SQUARE_SIZE,
 					_playerRocket->getPosition().y));
 		ball->setVelocity(makeVector2(8.0, 0.0));
 
