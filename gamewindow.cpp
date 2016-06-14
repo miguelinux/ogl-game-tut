@@ -160,7 +160,5 @@ void GameWindow::mouseButtonPressed(int button, int action)
 		ball->setVelocity(makeVector2(2.0, 0.0));
 
 		_ballsArray->push_back(ball);
-
-		printf("X: %5.2f Y: %5.2f\n", xpos, ypos);
 	}
 }
