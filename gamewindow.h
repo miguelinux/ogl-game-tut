@@ -23,6 +23,7 @@ class GameWindow
 
 		GLuint _vertexBufferID;
 		GLuint _textureBufferID;
+		GLuint _ballTextureBufferID;
 
 		PlayerSprite *_playerRocket;
 
