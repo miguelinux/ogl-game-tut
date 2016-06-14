@@ -26,6 +26,7 @@ class GameWindow
 		GLuint _ballTextureBufferID;
 
 		PlayerSprite *_playerRocket;
+		std::vector<Sprite *>  *_ballsArray;
 
 		GLuint loadAndBufferImage(const char *filename);
 		void setupGL();

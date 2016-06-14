@@ -102,6 +102,8 @@ GameWindow::GameWindow(bool running, GLFWwindow* window): _running(running),
 	_textureBufferID = loadAndBufferImage("nave.png");
 	_ballTextureBufferID = loadAndBufferImage("ball.png");
 
+	_ballsArray = new std::vector<Sprite *>;
+
 	_playerRocket = new PlayerSprite(_window, _textureBufferID,
 			makeVector2( _height/2.0, 300));
 	_playerRocket->setBoundingBox(makeBoundingBox(_height, 0, 0, _width));
@@ -152,9 +154,17 @@ void GameWindow::update()
 void GameWindow::mouseButtonPressed(int button, int action)
 {
 	double xpos, ypos;
+	Sprite *ball;
+
 	if (button == GLFW_MOUSE_BUTTON_LEFT && action == GLFW_PRESS) {
 		glfwGetCursorPos(_window, &xpos, &ypos);
 		ypos = _height - ypos;
+
+		ball = new Sprite(_window, _ballTextureBufferID,
+				makeVector2(_playerRocket->getPosition().x,
+					_playerRocket->getPosition().y));
+		ball->setVelocity(makeVector2(2.0, 0.0));
+
 		printf("X: %5.2f Y: %5.2f\n", xpos, ypos);
 	}
 }
