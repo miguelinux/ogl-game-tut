@@ -13,6 +13,7 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 int main (void)
 {
 	GLFWwindow* window;
+	GLenum err;
 	double lastTime, deltaTime;
 
 	/* Initialize the library */
@@ -26,20 +27,22 @@ int main (void)
 		return -1;
 	}
 
-#ifdef _WIN32
-	/* Initialize GLEW */
-	//glewExperimental = true; /* Needed for core profile */
-	if (glewInit() != GLEW_OK) {
-		fprintf(stderr, "Failed to initialize GLEW\n");
-		glfwTerminate();
-		return -2;
-	}
-#endif /*_WIN32*/
-
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
 
 	glfwSetMouseButtonCallback(window, mouse_button_callback);
+
+#ifdef _WIN32
+	/* Initialize GLEW */
+	//glewExperimental = true; /* Needed for core profile */
+	err = glewInit();
+	if (GLEW_OK != err) {
+		/* Problem: glewInit failed, something is seriously wrong. */
+		/* printf("Error: %s\n", glewGetErrorString(err)); */
+		glfwTerminate();
+		return -2;
+	}
+#endif /*_WIN32*/
 
 	gameWindow = new GameWindow(true, window);
 
