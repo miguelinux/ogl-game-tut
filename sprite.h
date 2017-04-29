@@ -1,7 +1,7 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
-#include <GLFW/glfw3.h>
+#include "myglfw3.h"
 #include "vector2.h"
 
 #define SQUARE_SIZE 100.0f

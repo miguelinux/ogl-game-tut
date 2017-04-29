@@ -1,7 +1,7 @@
 #ifndef VECTOR2_H
 #define VECTOR2_H
 
-#include <GLFW/glfw3.h>
+#include "myglfw3.h"
 
 typedef struct {
 	GLfloat x;
