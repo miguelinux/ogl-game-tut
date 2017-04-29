@@ -9,6 +9,7 @@
 #endif /* _WIN32 */
 
 #ifdef _WIN32
+  #define GLEW_STATIC
   #include <GL/glew.h>
 #else
   /* To use glGenBuffers and othres */
