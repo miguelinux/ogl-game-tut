@@ -26,6 +26,16 @@ int main (void)
 		return -1;
 	}
 
+#ifdef _WIN32
+	/* Initialize GLEW */
+	//glewExperimental = true; /* Needed for core profile */
+	if (glewInit() != GLEW_OK) {
+		fprintf(stderr, "Failed to initialize GLEW\n");
+		glfwTerminate();
+		return -2;
+	}
+#endif /*_WIN32*/
+
 	/* Make the window's context current */
 	glfwMakeContextCurrent(window);
 
